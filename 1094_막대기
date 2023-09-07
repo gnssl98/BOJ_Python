@@ -1,0 +1,20 @@
+# X를 64의 약수의 합으로 나타내고, 숫자의 개수를 구한다
+
+X = int(input())
+
+L = 64
+cnt = 0
+
+if X ==L:
+    cnt = 1
+else:
+    while X <= L:
+        L = L//2
+        if X ==0:
+            break
+        elif X >= L :
+            X = X-L
+            cnt= cnt+1
+    
+print(cnt)
+        
