@@ -1,0 +1,40 @@
+# Combination
+# mCn 
+T = int(input())
+ans = []
+for tmp in range(T):
+    N,M = map(int, input().split())
+    temp =1
+    
+    if N==M:
+        ans.append(1)
+    elif M==1:
+        ans.append(N)
+    else:
+        for i in range(M+1):
+            if i!=0:
+                temp = temp * i
+        for j in range(N+1):
+            if j!=0:
+                temp = temp // j
+        for k in range(M-N+1):
+            if k !=0:
+                temp = temp // k
+        ans.append(temp)
+    
+for i in range(T):
+    print(int(ans[i]))
+    
+'''
+math 함수의 factorial 사용
+
+import math
+
+T = int(input())
+
+for _ in range(T):
+    N, M =map(int, input().split())
+    ans = math.factorial(M) // (math.factorial(N) * math.factorial(M-N))
+    print(ans)
+
+'''
